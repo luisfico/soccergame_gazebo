@@ -1,0 +1,168 @@
+<?xml version="1.0"?>
+<sdf version="1.4">
+  <world name="default">
+  
+    <gui>
+      <camera name='user_camera'>
+        <pose>0.222907 -16.468 23.0471 0 0.987644 1.58019</pose>
+        <view_controller>orbit</view_controller>
+        <projection_type>perspective</projection_type>
+      </camera>
+    </gui>
+
+    
+<!--   
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+ -->
+
+<!-- 
+    <model name='stadiumA'>
+      <pose frame=''>0 0 0 0 0 0</pose> 
+        <include>
+          <uri>model://robocup_3Dsim_field</uri>
+        </include>
+         <include>
+          <uri>model://robocup_3Dsim_goal</uri>
+          <name>robocup_3Dsim_goalB</name>
+          <pose>15 0 0 0 0 0</pose>
+        </include>
+        <include>
+          <uri>model://robocup_3Dsim_goal</uri>
+          <name>robocup_3Dsim_goalA</name>
+          <pose>-15 0 0 0 0 3.1415</pose>
+        </include>
+    </model>
+ -->
+<!-- 
+  <model name="stadium">
+    <static>true</static>
+    <pose>0 0 0 0 0 0</pose>
+    
+        <include>
+          <uri>model://robocup_3Dsim_field</uri>
+          <pose>0 0 0 0 0 0</pose>
+        </include>
+        
+         <include>
+          <uri>model://robocup_3Dsim_goal</uri>
+          <name>robocup_3Dsim_goalB</name>
+          <pose>15 0 0 0 0 0</pose>
+        </include>
+        
+        <include>
+          <uri>model://robocup_3Dsim_goal</uri>
+          <name>robocup_3Dsim_goalA</name>
+          <pose>-15 0 0 0 0 3.1415</pose>
+        </include>
+        
+  </model>
+ -->
+
+<!--official soccer ball diameter 21.5cm-->
+<!-- 
+    <model name='soccer_ball0'>
+      <pose frame=''>-8 0 0.5 0 0 0</pose> 
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <sphere>
+              <radius>0.1075</radius> 
+            </sphere>
+          </geometry>
+          <surface>
+            <bounce>
+              <restitution_coefficient>0.5</restitution_coefficient>
+              <threshold>0,1075</threshold>
+            </bounce>
+            <contact>
+              <ode>
+                <max_vel>10</max_vel>
+              </ode>
+            </contact>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <inertial>
+          <mass>0.0025</mass>
+          <inertia>
+            <ixx>2.13333e-07</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>2.13333e-07</iyy>
+            <iyz>0</iyz>
+            <izz>2.13333e-07</izz>
+          </inertia>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+        </inertial>
+        <visual name='visual'>
+          <geometry>
+            <sphere>
+              <radius>0.1075</radius>
+            </sphere>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Grey</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+            <ambient>1 1 0 1</ambient>
+            <diffuse>0.7 0.7 0.7 1</diffuse>
+            <specular>0.01 0.01 0.01 1</specular>
+            <emissive>0 0 0 1</emissive>
+            <shader type='vertex'>
+              <normal_map>__default__</normal_map>
+            </shader>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model> 
+  
+  -->
+
+
+
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <plugin name="factory" filename="libfactoryWorldPlugin.so">
+      
+      <!-- options: stop, jog, run, pass, kick  TODO: to become squeletes DAE without skin    -->
+       <animations> 
+          <animation name="animation">
+              <filename>model://playerMov/stop.dae</filename>
+              <interpolate_x>true</interpolate_x>
+              <scale>1</scale> <!-- MANDATORY to keep constant scale of model .DAE during all the program    -->
+          </animation> 
+          <animation name="animation">
+              <filename>model://playerMov/run.dae</filename>
+              <interpolate_x>true</interpolate_x>
+              <scale>1</scale>
+          </animation> 
+          <animation name="animation">
+              <filename>model://playerMov/pass.dae</filename> 
+              <interpolate_x>true</interpolate_x>
+              <scale>1</scale>
+          </animation> 
+          <animation name="animation">
+              <filename>model://playerMov/kick.dae</filename> 
+              <interpolate_x>true</interpolate_x> 
+              <scale>1</scale>
+          </animation> 
+      </animations> 
+
+    </plugin>
+
+  </world>
+</sdf>
