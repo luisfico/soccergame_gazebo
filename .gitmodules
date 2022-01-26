@@ -1,0 +1,3 @@
+[submodule "gazebo"]
+	path = gazebo
+	url = git@github.com:luisfico/gazebo.git
