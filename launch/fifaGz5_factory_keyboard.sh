@@ -16,5 +16,5 @@ export GAZEBO_PLUGIN_PATH=`pwd`/build
 ./gazebo/build/gazebo/gui/gzclient --verbose  &
 
 #./build/teleopJoystickGz
-#./gazebo_fifa/build/teleopKeyboardGz
+./build/teleopKeyboardGz
 
