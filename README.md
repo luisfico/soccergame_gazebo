@@ -2,7 +2,7 @@
 
 Gazebo based football game. 
 
-This game is implemented on a world plugin by using a modified version of gazebo 11.
+This game is implemented on a world plugin by using a modified version of **gazebo 11** (tested in **ubuntu 20.04**).
 
 You can use a USB-Joystick or keyboard for playing. Enjoy:)
 
@@ -34,7 +34,7 @@ Plug your USB-joystick and play :
 
 ## Using Keyboard module :
 
-    sh launch/fifaGz5_factory.sh
+    sh launch/fifaGz5_factory_keyboard.sh
 
 Press keys moving : i,j,k,l    action:q,s,d,z.
 
